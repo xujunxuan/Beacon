@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>后台管理系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/main-min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="header">
+        <div class="dl-title">
+            <!--<img src="/chinapost/Public/assets/img/top.png">-->
+        </div>
+        <div class="dl-log">欢迎您，<span class="dl-log-user">root</span><a href="/chinapost/index.php?m=Public&a=logout" title="退出系统" class="dl-log-quit">[退出]</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="dl-main-nav">
+            <div class="dl-inform">
+                <div class="dl-inform-title">
+                    <s class="dl-inform-icon dl-up"></s>
+                </div>
+            </div>
+            <ul id="J_Nav" class="nav-list ks-clear">
+                <li class="nav-item dl-selected">
+                    <div class="nav-item-inner nav-home">系统配置</div>
+                </li>
+                <li class="nav-item dl-selected">
+                    <div class="nav-item-inner nav-order">用户管理</div>
+                </li>
+                <li class="nav-item dl-selected">
+                    <div class="nav-item-inner nav-order">巡检任务管理</div>
+                </li>
+                <li class="nav-item dl-selected">
+                    <div class="nav-item-inner nav-order">系统消息管理</div>
+                </li>
+
+            </ul>
+        </div>
+        <ul id="J_NavContent" class="dl-tab-conten">
+        </ul>
+    </div>
+    <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/bui-min.js"></script>
+    <script type="text/javascript" src="assets/js/common/main-min.js"></script>
+    <script type="text/javascript" src="assets/js/config-min.js"></script>
+    <script>
+    BUI.use('common/main', function() {
+        var config = [{
+            id: '1',
+            menu: [{//地点配置区域配置
+                text: '地图配置',
+                items: [{
+                    id: '11',
+                    text: '区域配置',
+
+                }, {
+                    id: '12',
+                    text: '地点配置',
+                    href: 'Role/index.html'
+                }, {
+                    id: '13',
+                    text: '地图文件配置',
+                    href: 'User/index.html'
+                } ]
+            },
+            {//地点配置区域配置
+                text: '巡检点配置',
+                items: [{
+                    id: '14',
+                    text: '巡检点类型配置',
+
+                }, {
+                    id: '15',
+                    text: '巡检点配置',
+                    href: 'Role/index.html'
+                }]
+            },
+            {//地点配置区域配置
+                text: '巡检路线管理',
+                items: [{
+                    id: '14',
+                    text: '巡检路线配置',
+
+                }, {
+                    id: '15',
+                    text: '巡检路线评估',
+                    href: 'Role/index.html'
+                }]
+            }
+
+            ]
+        }, {
+            id: '3',
+            homePage: '9',
+            menu: [{
+                text: '用户管理',
+                items: [{
+                    id: '9',
+                    text: '用户管理',
+                    href: 'Node/index.html'
+                },{
+                    id: '9',
+                    text: '角色管理',
+                    href: 'Node/index.html'
+                },{
+                    id: '9',
+                    text: '用户分组',
+                    href: 'Node/index.html'
+               }]
+          }]
+    　   },{
+            id: '7',
+            homePage: '9',
+            menu: [{
+                text: '巡检任务管理',
+                items: [{
+                    id: '9',
+                    text: '分配任务',
+                    href: 'Node/index.html'
+                },{
+                    id: '9',
+                    text: '任务审核',
+                    href: 'Node/index.html'
+                },{
+                    id: '9',
+                    text: '任务评估',
+                    href: 'Node/index.html'
+               }]
+          },
+                {text: '巡检结果统计',
+                items: [{
+                    id: '9',
+                    text: '异常巡检点查询',
+                    href: 'Node/index.html'
+                },{
+                    id: '9',
+                    text: '巡检任务考核',
+                    href: 'Node/index.html'
+                },{
+                    id: '9',
+                    text: '查看巡检纪录',
+                    href: 'Node/index.html'
+               }]
+          }]
+    　   },
+        {
+            id: '5',
+            homePage: '9',
+            menu: [{
+                text: '系统消息管理',
+                items: [{
+                    id: '9',
+                    text: '消息管理',
+                    href: 'Node/index.html'
+                },{
+                    id: '9',
+                    text: '我的消息',
+                    href: 'Node/index.html'
+                }]
+          }
+                ]
+    　   }
+        ];
+        new PageUtil.MainPage({
+            modulesConfig: config
+        });
+    });
+    </script>
+
+</body>
+
+</html>
